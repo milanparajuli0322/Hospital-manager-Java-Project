@@ -45,6 +45,11 @@ public class Patient {
             throw new IllegalArgumentException("Patient Id must be positive");
         }
         this.patientId=patientId;
+
+        if(phone==null || !phone.matches("\\d{10}"))
+        {
+            throw new IllegalArgumentException("Phone number must contain 10 digits");
+        }
         this.phone=phone;
         this.address=address;
 
