@@ -1,4 +1,5 @@
 import java.time.LocalDate;
+import java.time.Period;
 
 public class Patient {
     private String name;
@@ -40,5 +41,9 @@ public class Patient {
     public LocalDate getDateOfBirth()
     {
         return dateOfBirth;
+    }
+    public int getAge()
+    {
+        return Period.between(dateOfBirth,LocalDate.now()).getYears();
     }
 }
