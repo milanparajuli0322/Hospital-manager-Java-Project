@@ -38,6 +38,11 @@ public class Patient {
         this.patientId=patientId;
         this.phone=phone;
         this.address=address;
+
+        if(dateOfBirth.isAfter(LocalDate.now()))
+        {
+            throw new IllegalArgumentException("Date cannot be in future");
+        }
         this.dateOfBirth=dateOfBirth;
         this.email=email;
         this.bloodGroup=bloodGroup;
