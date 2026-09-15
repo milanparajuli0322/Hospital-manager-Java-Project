@@ -152,9 +152,13 @@ public class Patient {
         {
             throw new IllegalArgumentException("Medical condition cannot be empty");
         }
-        if(medicalConditions.contains(condition))
+        
+        for(String existingCondition : medicalConditions)
         {
-            throw new IllegalArgumentException("Medical condition already exists");
+            if(existingCondition.equalsIgnoreCase(condition.trim()))
+            {
+                throw new IllegalArgumentException("Medical condition "+condition+" already exists");
+            }
         }
         medicalConditions.add(condition);
     }
