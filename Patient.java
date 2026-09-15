@@ -77,10 +77,6 @@ public class Patient {
         }
         this.bloodGroup=bloodGroup;
 
-        this.registrationDate=LocalDate.now();
-        this.status=Status.ACTIVE;
-        this.medicalConditions=new ArrayList<>();
-
         if(emergencyContactNAme==null || emergencyContactNAme.trim().isEmpty())
         {
             throw new IllegalArgumentException("Emergency contact name cannot be empty");
@@ -93,6 +89,9 @@ public class Patient {
         }
         this.emergencyContactPhone=emergencyContactPhone;
 
+        this.registrationDate=LocalDate.now();
+        this.status=Status.ACTIVE;
+        this.medicalConditions=new ArrayList<>();
         this.gender=Gender.NULL;
     }
     public int getPatientId()
@@ -149,6 +148,14 @@ public class Patient {
     }
     public void addMedicalConditions(String condition)
     {
+        if(condition==null || condition.trim().isEmpty())
+        {
+            throw new IllegalArgumentException("Medical condition cannot be empty");
+        }
+        if(medicalConditions.contains(condition))
+        {
+            throw new IllegalArgumentException("Medical condition already exists");
+        }
         medicalConditions.add(condition);
     }
     public ArrayList<String> getMedicalConditions()
