@@ -52,6 +52,11 @@ public class Patient {
             throw new IllegalArgumentException("Phone number must contain 10 digits");
         }
         this.phone=phone;
+
+        if(address==null || address.trim().isEmpty())
+        {
+            throw new IllegalArgumentException("Patient address cannot be empty");
+        }
         this.address=address;
 
         if(dateOfBirth.isAfter(LocalDate.now()))
