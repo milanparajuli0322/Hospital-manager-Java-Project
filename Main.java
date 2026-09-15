@@ -20,5 +20,7 @@ public class Main {
         System.out.println("Patient Status :"+patient.getStatus());
         patient.activate();
         System.out.println("Patient Status :"+patient.getStatus());
+        patient.addMedicalConditions("asthma");
+        System.out.println("Patient Medicalconditions :"+patient.getMedicalConditions());
     }
 }

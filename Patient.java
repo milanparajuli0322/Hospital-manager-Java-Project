@@ -1,5 +1,6 @@
 import java.time.LocalDate;
 import java.time.Period;
+import java.util.ArrayList;
 
 public class Patient {
     private String name;
@@ -12,6 +13,7 @@ public class Patient {
     private String bloodGroup;
     private LocalDate registrationDate;
     private Status status;
+    private ArrayList<String> medicalConditions;
 
     public enum Status
     {
@@ -32,6 +34,7 @@ public class Patient {
         this.bloodGroup=bloodGroup;
         this.registrationDate=LocalDate.now();
         this.status=Status.ACTIVE;
+        this.medicalConditions=new ArrayList<>();
     }
     public int getPatientId()
     {
@@ -88,5 +91,13 @@ public class Patient {
     public void deactivate()
     {
         this.status=Status.INACTIVE;
+    }
+    public void addMedicalConditions(String condition)
+    {
+        medicalConditions.add(condition);
+    }
+    public ArrayList<String> getMedicalConditions()
+    {
+        return medicalConditions;
     }
 }
