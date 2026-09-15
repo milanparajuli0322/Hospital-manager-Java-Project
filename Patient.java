@@ -100,4 +100,8 @@ public class Patient {
     {
         return medicalConditions;
     }
+    public void removeMedicalConditions(String condition)
+    {
+        medicalConditions.remove(condition);
+    }
 }

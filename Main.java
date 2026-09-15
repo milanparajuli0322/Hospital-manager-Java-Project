@@ -21,6 +21,9 @@ public class Main {
         patient.activate();
         System.out.println("Patient Status :"+patient.getStatus());
         patient.addMedicalConditions("asthma");
+        patient.addMedicalConditions("jaundice");
+        System.out.println("Patient Medicalconditions :"+patient.getMedicalConditions());
+        patient.removeMedicalConditions("asthma");
         System.out.println("Patient Medicalconditions :"+patient.getMedicalConditions());
     }
 }
