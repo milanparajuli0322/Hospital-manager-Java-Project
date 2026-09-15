@@ -8,8 +8,9 @@ public class Patient {
     private String phone;
     private String address;
     private LocalDate dateOfBirth;
+    private String email;
 
-    public Patient(String name,String gender,int patientId,String phone,String address,LocalDate dateOfBirth)
+    public Patient(String name,String gender,int patientId,String phone,String address,LocalDate dateOfBirth,String email)
     {
         this.name=name;
         this.gender=gender;
@@ -17,6 +18,7 @@ public class Patient {
         this.phone=phone;
         this.address=address;
         this.dateOfBirth=dateOfBirth;
+        this.email=email;
     }
     public int getPatientId()
     {
@@ -45,5 +47,9 @@ public class Patient {
     public int getAge()
     {
         return Period.between(dateOfBirth,LocalDate.now()).getYears();
+    }
+    public String getEmail()
+    {
+        return email;
     }
 }
