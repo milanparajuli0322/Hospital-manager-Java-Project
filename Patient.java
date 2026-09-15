@@ -11,4 +11,20 @@ public class Patient {
         this.gender=gender;
         this.patientId=patientId;
     }
+    public int getPatientId()
+    {
+        return patientId;
+    }
+    public int getAge()
+    {
+        return age;
+    }
+    public String getName()
+    {
+        return name;
+    }
+    public String getGender()
+    {
+        return gender;
+    }
 }
