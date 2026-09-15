@@ -58,7 +58,13 @@ public class Patient {
             throw new IllegalArgumentException("Dateofbirth cannot be in future");
         }
         this.dateOfBirth=dateOfBirth;
+
+        if(email==null || email.matches("^[A-Za-z0-9+_.-]+@gmail\\.com$"))
+        {
+            throw new IllegalArgumentException("Invalid email address");   
+        }
         this.email=email;
+
         this.bloodGroup=bloodGroup;
         this.registrationDate=LocalDate.now();
         this.status=Status.ACTIVE;
