@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 public class Patient {
     private String name;
-    private String gender;
     private int patientId;
     private String phone;
     private String address;
@@ -16,6 +15,7 @@ public class Patient {
     private ArrayList<String> medicalConditions;
     private String emergencyContactName;
     private String emergencyContactPhone;
+    private Gender gender;
 
     public enum Status
     {
@@ -24,11 +24,17 @@ public class Patient {
         INACTIVE
     }
 
-    public Patient(String name,String gender,int patientId,String phone,String address,LocalDate dateOfBirth,
-        String email,String bloodGroup,String emergencyContactNAme,String emergencyContactPhone)
+    public enum Gender
+    {
+        MALE,
+        FEMALE,
+        OTHER
+    }
+
+    public Patient(String name,int patientId,String phone,String address,LocalDate dateOfBirth,
+        String email,String bloodGroup,String emergencyContactNAme,String emergencyContactPhone,Gender gender)
     {
         this.name=name;
-        this.gender=gender;
         this.patientId=patientId;
         this.phone=phone;
         this.address=address;
@@ -40,6 +46,7 @@ public class Patient {
         this.medicalConditions=new ArrayList<>();
         this.emergencyContactName=emergencyContactNAme;
         this.emergencyContactPhone=emergencyContactPhone;
+        this.gender=gender;
     }
     public int getPatientId()
     {
@@ -49,7 +56,7 @@ public class Patient {
     {
         return name;
     }
-    public String getGender()
+    public Gender getGender()
     {
         return gender;
     }
