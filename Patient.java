@@ -11,8 +11,16 @@ public class Patient {
     private String email;
     private String bloodGroup;
     private LocalDate registrationDate;
+    private Status status;
 
-    public Patient(String name,String gender,int patientId,String phone,String address,LocalDate dateOfBirth,String email,String bloodGroup,LocalDate registrationDate)
+    public enum Status
+    {
+        ACTIVE,
+        DISCHARGED,
+        INACTIVE
+    }
+
+    public Patient(String name,String gender,int patientId,String phone,String address,LocalDate dateOfBirth,String email,String bloodGroup)
     {
         this.name=name;
         this.gender=gender;
@@ -22,7 +30,8 @@ public class Patient {
         this.dateOfBirth=dateOfBirth;
         this.email=email;
         this.bloodGroup=bloodGroup;
-        this.registrationDate=registrationDate;
+        this.registrationDate=LocalDate.now();
+        this.status=Status.ACTIVE;
     }
     public int getPatientId()
     {
@@ -63,5 +72,9 @@ public class Patient {
     public LocalDate getRegistrationDate()
     {
         return registrationDate;
+    }
+    public Status getStatus()
+    {
+        return status;
     }
 }
