@@ -219,6 +219,12 @@ public class Patient {
         return emergencyContactPhone;
     }
 
+    public void setEmergencyContact(String emergencyContactName,String emergencyContactPhone)
+    {
+        this.emergencyContactName=emergencyContactName;
+        this.emergencyContactPhone=emergencyContactPhone;
+    }
+
     public Gender getGender()
     {
         return gender;

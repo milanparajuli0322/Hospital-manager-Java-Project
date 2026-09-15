@@ -26,7 +26,7 @@ public class Main {
         patient.addMedicalConditions("jaundice");
         System.out.println("Patient Medicalconditions :"+patient.getMedicalConditions());
         patient.removeMedicalConditions("asthma");
-        System.out.println("Patient Medicalconditions :"+patient.getMedicalConditions());
+        patient.setEmergencyContact("manju", "9802302345");
         System.out.print("Patient Emergencycontact :"+patient.getEmergencyContactName());
         System.out.println("-"+patient.getEmergencyContactPhone());
     }
