@@ -9,8 +9,9 @@ public class Patient {
     private String address;
     private LocalDate dateOfBirth;
     private String email;
+    private String bloodGroup;
 
-    public Patient(String name,String gender,int patientId,String phone,String address,LocalDate dateOfBirth,String email)
+    public Patient(String name,String gender,int patientId,String phone,String address,LocalDate dateOfBirth,String email,String bloodGroup)
     {
         this.name=name;
         this.gender=gender;
@@ -19,6 +20,7 @@ public class Patient {
         this.address=address;
         this.dateOfBirth=dateOfBirth;
         this.email=email;
+        this.bloodGroup=bloodGroup;
     }
     public int getPatientId()
     {
@@ -51,5 +53,9 @@ public class Patient {
     public String getEmail()
     {
         return email;
+    }
+    public String getBloodGroup()
+    {
+        return bloodGroup;
     }
 }
