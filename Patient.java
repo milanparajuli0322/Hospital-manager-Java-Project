@@ -10,8 +10,9 @@ public class Patient {
     private LocalDate dateOfBirth;
     private String email;
     private String bloodGroup;
+    private LocalDate registrationDate;
 
-    public Patient(String name,String gender,int patientId,String phone,String address,LocalDate dateOfBirth,String email,String bloodGroup)
+    public Patient(String name,String gender,int patientId,String phone,String address,LocalDate dateOfBirth,String email,String bloodGroup,LocalDate registrationDate)
     {
         this.name=name;
         this.gender=gender;
@@ -21,6 +22,7 @@ public class Patient {
         this.dateOfBirth=dateOfBirth;
         this.email=email;
         this.bloodGroup=bloodGroup;
+        this.registrationDate=registrationDate;
     }
     public int getPatientId()
     {
@@ -57,5 +59,9 @@ public class Patient {
     public String getBloodGroup()
     {
         return bloodGroup;
+    }
+    public LocalDate getRegistrationDate()
+    {
+        return registrationDate;
     }
 }
