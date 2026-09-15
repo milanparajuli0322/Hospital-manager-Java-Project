@@ -2,17 +2,15 @@ import java.time.LocalDate;
 
 public class Patient {
     private String name;
-    private int age;
     private String gender;
     private int patientId;
     private String phone;
     private String address;
     private LocalDate dateOfBirth;
 
-    public Patient(String name,int age,String gender,int patientId,String phone,String address,LocalDate dateOfBirth)
+    public Patient(String name,String gender,int patientId,String phone,String address,LocalDate dateOfBirth)
     {
         this.name=name;
-        this.age=age;
         this.gender=gender;
         this.patientId=patientId;
         this.phone=phone;
@@ -22,10 +20,6 @@ public class Patient {
     public int getPatientId()
     {
         return patientId;
-    }
-    public int getAge()
-    {
-        return age;
     }
     public String getName()
     {
