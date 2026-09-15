@@ -34,6 +34,10 @@ public class Patient {
     public Patient(String name,int patientId,String phone,String address,LocalDate dateOfBirth,
         String email,String bloodGroup,String emergencyContactNAme,String emergencyContactPhone,Gender gender)
     {
+        if(name==null || name.trim().isEmpty())
+        {
+            throw new IllegalArgumentException("Patient name cannot be empty");
+        }
         this.name=name;
 
         if(patientId<=0)
