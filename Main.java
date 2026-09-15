@@ -3,11 +3,12 @@ import java.time.LocalDate;
 public class Main {
     public static void main(String[] args) {
         Patient patient=new Patient("milan",12345,"9849966002","kathmandu",LocalDate.of(2006,5,15),
-        "milanparajuli0322@gmail.com","o-","megha","9843733855",Patient.Gender.MALE);
+        "milanparajuli0322@gmail.com","O-","megha","9843733855");
         System.out.println("---Hospital manager---"); 
 
         System.out.println("Patient Id :"+patient.getPatientId());
         System.out.println("Patient Name :"+patient.getName());
+        patient.makeGenderMale();
         System.out.println("Patient Gender :"+patient.getGender());
         System.out.println("Patient Contact :"+patient.getPhone());
         System.out.println("Patient Address :"+patient.getAddress());

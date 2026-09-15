@@ -28,11 +28,12 @@ public class Patient {
     {
         MALE,
         FEMALE,
-        OTHER
+        OTHER,
+        NULL
     }
 
     public Patient(String name,int patientId,String phone,String address,LocalDate dateOfBirth,
-        String email,String bloodGroup,String emergencyContactNAme,String emergencyContactPhone,Gender gender)
+        String email,String bloodGroup,String emergencyContactNAme,String emergencyContactPhone)
     {
         if(name==null || name.trim().isEmpty())
         {
@@ -59,24 +60,35 @@ public class Patient {
         }
         this.dateOfBirth=dateOfBirth;
 
-        if(email==null || email.matches("^[A-Za-z0-9+_.-]+@gmail\\.com$"))
+        if(email==null || !email.matches("^[A-Za-z0-9+_.-]+@gmail\\.com$"))
         {
             throw new IllegalArgumentException("Invalid email address");   
         }
         this.email=email;
 
-        if(bloodGroup==null || !bloodGroup.matches("^(A|B|AB|O)[+-]$"))
+        if(bloodGroup==null || !bloodGroup.matches("^(A+|B+|AB+|O+|A-|B-|AB-|O-)$"))
         {
             throw new IllegalArgumentException("Invalid blood group");
         }
         this.bloodGroup=bloodGroup;
-        
+
         this.registrationDate=LocalDate.now();
         this.status=Status.ACTIVE;
         this.medicalConditions=new ArrayList<>();
+
+        if(emergencyContactNAme==null || emergencyContactNAme.trim().isEmpty())
+        {
+            throw new IllegalArgumentException("Emergency contact name cannot be empty");
+        }
         this.emergencyContactName=emergencyContactNAme;
+
+        if(emergencyContactPhone==null || !emergencyContactPhone.matches("\\d{10}"))
+        {
+            throw new IllegalArgumentException("Emergency contact number must contain 10 digits");
+        }
         this.emergencyContactPhone=emergencyContactPhone;
-        this.gender=gender;
+
+        this.gender=Gender.NULL;
     }
     public int getPatientId()
     {
@@ -85,10 +97,6 @@ public class Patient {
     public String getName()
     {
         return name;
-    }
-    public Gender getGender()
-    {
-        return gender;
     }
     public String getPhone()
     {
@@ -153,5 +161,21 @@ public class Patient {
     public String getEmergencyContactPhone()
     {
         return emergencyContactPhone;
+    }
+    public Gender getGender()
+    {
+        return gender;
+    }
+    public void makeGenderFemale()
+    {
+        this.gender=Gender.FEMALE;
+    }
+    public void makeGenderMale()
+    {
+        this.gender=Gender.MALE;
+    }
+    public void makeGenderOther()
+    {
+        this.gender=Gender.OTHER;
     }
 }
