@@ -65,7 +65,12 @@ public class Patient {
         }
         this.email=email;
 
+        if(bloodGroup==null || !bloodGroup.matches("^(A|B|AB|O)[+-]$"))
+        {
+            throw new IllegalArgumentException("Invalid blood group");
+        }
         this.bloodGroup=bloodGroup;
+        
         this.registrationDate=LocalDate.now();
         this.status=Status.ACTIVE;
         this.medicalConditions=new ArrayList<>();
