@@ -35,13 +35,18 @@ public class Patient {
         String email,String bloodGroup,String emergencyContactNAme,String emergencyContactPhone,Gender gender)
     {
         this.name=name;
+
+        if(patientId<=0)
+        {
+            throw new IllegalArgumentException("Patient Id must be positive");
+        }
         this.patientId=patientId;
         this.phone=phone;
         this.address=address;
 
         if(dateOfBirth.isAfter(LocalDate.now()))
         {
-            throw new IllegalArgumentException("Date cannot be in future");
+            throw new IllegalArgumentException("Dateofbirth cannot be in future");
         }
         this.dateOfBirth=dateOfBirth;
         this.email=email;
