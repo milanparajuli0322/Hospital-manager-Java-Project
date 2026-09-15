@@ -35,6 +35,7 @@ public class Patient {
     public Patient(String name,int patientId,String phone,String address,LocalDate dateOfBirth,
         String email,String bloodGroup,String emergencyContactNAme,String emergencyContactPhone)
     {
+
         if(name==null || name.trim().isEmpty())
         {
             throw new IllegalArgumentException("Patient name cannot be empty");
@@ -94,58 +95,77 @@ public class Patient {
         this.medicalConditions=new ArrayList<>();
         this.gender=Gender.NULL;
     }
+
     public int getPatientId()
     {
         return patientId;
     }
+
     public String getName()
     {
         return name;
     }
+
     public String getPhone()
     {
         return phone;
     }
+
     public String getAddress()
     {
         return address;
     }
+
     public LocalDate getDateOfBirth()
     {
         return dateOfBirth;
     }
+
     public int getAge()
     {
         return Period.between(dateOfBirth,LocalDate.now()).getYears();
     }
+
     public String getEmail()
     {
         return email;
     }
+
     public String getBloodGroup()
     {
         return bloodGroup;
     }
+
     public LocalDate getRegistrationDate()
     {
         return registrationDate;
     }
+
     public Status getStatus()
     {
         return status;
     }
+
     public void discharge()
     {
         this.status=Status.DISCHARGED;
     }
+
     public void activate()
     {
         this.status=Status.ACTIVE;
     }
+
     public void deactivate()
     {
         this.status=Status.INACTIVE;
     }
+
+    public ArrayList<String> getMedicalConditions()
+    {
+        return medicalConditions;
+    }
+
     public void addMedicalConditions(String condition)
     {
         if(condition==null || condition.trim().isEmpty())
@@ -162,34 +182,58 @@ public class Patient {
         }
         medicalConditions.add(condition);
     }
-    public ArrayList<String> getMedicalConditions()
-    {
-        return medicalConditions;
-    }
+
     public void removeMedicalConditions(String condition)
     {
+        boolean found=true;
+        if(condition==null || condition.trim().isEmpty())
+        {
+            throw new IllegalArgumentException("Medical condition cannot be empty");
+        }
+        for(String existingCondition : medicalConditions)
+        {
+            if(!(existingCondition.equalsIgnoreCase(condition.trim())))
+            {
+                found=false;
+            }
+            else
+            {
+                found=true;
+                break;
+            }
+        }
+        if(found==false)
+        {
+            throw new IllegalArgumentException("Medical condition doesn't exist");
+        }
         medicalConditions.remove(condition);
     }
+
     public String getEmergencyContactName()
     {
         return emergencyContactName;
     }
+
     public String getEmergencyContactPhone()
     {
         return emergencyContactPhone;
     }
+
     public Gender getGender()
     {
         return gender;
     }
+
     public void makeGenderFemale()
     {
         this.gender=Gender.FEMALE;
     }
+
     public void makeGenderMale()
     {
         this.gender=Gender.MALE;
     }
+
     public void makeGenderOther()
     {
         this.gender=Gender.OTHER;
