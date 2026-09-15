@@ -4,14 +4,16 @@ public class Patient {
     private String gender;
     private int patientId;
     private String phone;
+    private String address;
 
-    public Patient(String name,int age,String gender,int patientId,String phone)
+    public Patient(String name,int age,String gender,int patientId,String phone,String address)
     {
         this.name=name;
         this.age=age;
         this.gender=gender;
         this.patientId=patientId;
         this.phone=phone;
+        this.address=address;
     }
     public int getPatientId()
     {
@@ -32,5 +34,9 @@ public class Patient {
     public String getPhone()
     {
         return phone;
+    }
+    public String getAddress()
+    {
+        return address;
     }
 }
