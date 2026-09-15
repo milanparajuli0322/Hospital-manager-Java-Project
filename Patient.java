@@ -221,6 +221,16 @@ public class Patient {
 
     public void setEmergencyContact(String emergencyContactName,String emergencyContactPhone)
     {
+        if (emergencyContactName == null || emergencyContactName.trim().isEmpty())
+        {
+            throw new IllegalArgumentException("Emergency contact name cannot be empty");
+        }
+
+        if (emergencyContactPhone == null || !emergencyContactPhone.matches("\\d{10}"))
+        {
+            throw new IllegalArgumentException("Emergency contact phone must contain exactly 10 digits");
+        }
+
         this.emergencyContactName=emergencyContactName;
         this.emergencyContactPhone=emergencyContactPhone;
     }
