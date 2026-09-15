@@ -77,4 +77,16 @@ public class Patient {
     {
         return status;
     }
+    public void discharge()
+    {
+        this.status=Status.DISCHARGED;
+    }
+    public void activate()
+    {
+        this.status=Status.ACTIVE;
+    }
+    public void deactivate()
+    {
+        this.status=Status.INACTIVE;
+    }
 }

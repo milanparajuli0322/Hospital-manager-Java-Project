@@ -16,5 +16,9 @@ public class Main {
         System.out.println("Patient Bloodgroup :"+patient.getBloodGroup());
         System.out.println("Patient Registrationdate :"+patient.getRegistrationDate());
         System.out.println("Patient Status :"+patient.getStatus());
+        patient.discharge();
+        System.out.println("Patient Status :"+patient.getStatus());
+        patient.activate();
+        System.out.println("Patient Status :"+patient.getStatus());
     }
 }
