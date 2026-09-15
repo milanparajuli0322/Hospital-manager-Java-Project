@@ -2,7 +2,7 @@ import java.time.LocalDate;
 
 public class Main {
     public static void main(String[] args) {
-        Patient patient=new Patient("milan", "male",12345,"9849966022","kathmandu",LocalDate.of(2006,5,15),"milanparajuli0322@gmail.com","o-");
+        Patient patient=new Patient("milan", "male",12345,"9849966022","kathmandu",LocalDate.of(2006,5,15),"milanparajuli0322@gmail.com","o-","megha","9843733855");
         System.out.println("---Hospital manager---"); 
 
         System.out.println("Patient Id :"+patient.getPatientId());
@@ -25,5 +25,7 @@ public class Main {
         System.out.println("Patient Medicalconditions :"+patient.getMedicalConditions());
         patient.removeMedicalConditions("asthma");
         System.out.println("Patient Medicalconditions :"+patient.getMedicalConditions());
+        System.out.print("Patient Emergencycontact :"+patient.getEmergencyContactName());
+        System.out.println("-"+patient.getEmergencyContactPhone());
     }
 }

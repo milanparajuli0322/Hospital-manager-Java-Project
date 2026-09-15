@@ -14,6 +14,8 @@ public class Patient {
     private LocalDate registrationDate;
     private Status status;
     private ArrayList<String> medicalConditions;
+    private String emergencyContactName;
+    private String emergencyContactPhone;
 
     public enum Status
     {
@@ -22,7 +24,8 @@ public class Patient {
         INACTIVE
     }
 
-    public Patient(String name,String gender,int patientId,String phone,String address,LocalDate dateOfBirth,String email,String bloodGroup)
+    public Patient(String name,String gender,int patientId,String phone,String address,LocalDate dateOfBirth,
+        String email,String bloodGroup,String emergencyContactNAme,String emergencyContactPhone)
     {
         this.name=name;
         this.gender=gender;
@@ -35,6 +38,8 @@ public class Patient {
         this.registrationDate=LocalDate.now();
         this.status=Status.ACTIVE;
         this.medicalConditions=new ArrayList<>();
+        this.emergencyContactName=emergencyContactNAme;
+        this.emergencyContactPhone=emergencyContactPhone;
     }
     public int getPatientId()
     {
@@ -103,5 +108,13 @@ public class Patient {
     public void removeMedicalConditions(String condition)
     {
         medicalConditions.remove(condition);
+    }
+    public String getEmergencyContactName()
+    {
+        return emergencyContactName;
+    }
+    public String getEmergencyContactPhone()
+    {
+        return emergencyContactPhone;
     }
 }
