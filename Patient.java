@@ -60,6 +60,10 @@ public class Patient {
         }
         this.address=address;
 
+        if(dateOfBirth==null)
+        {
+            throw new IllegalArgumentException("Dateofbirth cannot be null");
+        }
         if(dateOfBirth.isAfter(LocalDate.now()))
         {
             throw new IllegalArgumentException("Dateofbirth cannot be in future");
