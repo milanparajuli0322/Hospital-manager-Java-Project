@@ -45,7 +45,7 @@ public class Patient {
         {
             throw new IllegalArgumentException("Patient name cannot be empty");
         }
-        this.name=name;
+        this.name=name.trim();
 
 
         if(patientId<=0)
@@ -59,14 +59,14 @@ public class Patient {
         {
             throw new IllegalArgumentException("Phone number must contain 10 digits");
         }
-        this.phone=phone;
+        this.phone=phone.trim();
 
 
         if(address==null || address.trim().isEmpty())
         {
             throw new IllegalArgumentException("Patient address cannot be empty");
         }
-        this.address=address;
+        this.address=address.trim();
 
 
         if(dateOfBirth==null)
@@ -88,7 +88,7 @@ public class Patient {
         {
             throw new IllegalArgumentException("Invalid email address");   
         }
-        this.email=email;
+        this.email=email.trim();
 
 
         if(bloodGroup==null || bloodGroup.trim().isEmpty())
@@ -100,21 +100,21 @@ public class Patient {
         {
             throw new IllegalArgumentException("Invalid blood group");
         }
-        this.bloodGroup=bloodGroup;
+        this.bloodGroup=bloodGroup.trim();
 
 
         if(emergencyContactNAme==null || emergencyContactNAme.trim().isEmpty())
         {
             throw new IllegalArgumentException("Emergency contact name cannot be empty");
         }
-        this.emergencyContactName=emergencyContactNAme;
+        this.emergencyContactName=emergencyContactNAme.trim();
 
 
         if(emergencyContactPhone==null || !emergencyContactPhone.matches("\\d{10}"))
         {
             throw new IllegalArgumentException("Emergency contact number must contain 10 digits");
         }
-        this.emergencyContactPhone=emergencyContactPhone;
+        this.emergencyContactPhone=emergencyContactPhone.trim();
 
 
         this.registrationDate=LocalDate.now();
