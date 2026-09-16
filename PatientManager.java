@@ -17,6 +17,13 @@ public class PatientManager {
         {
             throw new IllegalArgumentException("Patient cannot be null");
         }
+        for (Patient existingPatient:patients)
+        {
+            if(patient.getPatientId()==existingPatient.getPatientId())
+            {
+                throw new IllegalArgumentException("Patient Id already exists");
+            }
+        }
         patients.add(patient);
     }
 }

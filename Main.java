@@ -31,6 +31,10 @@ public class Main {
         System.out.print("Patient Emergencycontact :"+patient.getEmergencyContactName());
         System.out.println("-"+patient.getEmergencyContactPhone());
         patientmanager.addPatient(patient);
+        
+        Patient patient2 = new Patient("Ram",12341,"9811111111","Pokhara",LocalDate.of(2005, 3, 10),"ram@gmail.com","A+","raju","1234567899");
+        patientmanager.addPatient(patient2);
+
         System.out.println("Patient registered sucessfully");
     }
 }

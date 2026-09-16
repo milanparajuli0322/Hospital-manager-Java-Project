@@ -96,7 +96,7 @@ public class Patient {
             throw new IllegalArgumentException("Blood group cannot be empty");
         }
         bloodGroup=bloodGroup.trim().toUpperCase();
-        if(!bloodGroup.matches("^(A+|B+|AB+|O+|A-|B-|AB-|O-)$"))
+        if(!bloodGroup.matches("^(A\\+|B\\+|AB\\+|O\\+|A-|B-|AB-|O-)$"))
         {
             throw new IllegalArgumentException("Invalid blood group");
         }
