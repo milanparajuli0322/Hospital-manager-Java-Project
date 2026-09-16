@@ -26,4 +26,17 @@ public class PatientManager {
         }
         patients.add(patient);
     }
+
+
+    public Patient findPatientById(int patientId)
+    {
+        for(Patient patient:patients)
+        {
+            if(patient.getPatientId()==patientId)
+            {
+                return patient;
+            }
+        }
+        return null;
+    }
 }

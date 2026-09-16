@@ -34,7 +34,16 @@ public class Main {
         
         Patient patient2 = new Patient("Ram",12341,"9811111111","Pokhara",LocalDate.of(2005, 3, 10),"ram@gmail.com","A+","raju","1234567899");
         patientmanager.addPatient(patient2);
-
         System.out.println("Patient registered sucessfully");
+        Patient foundPatient=patientmanager.findPatientById(12345);
+
+        if(foundPatient==null)
+        {
+            System.out.println("Patient not found");
+        }
+        else
+        {
+            System.out.println("Patient found :"+foundPatient.getName());
+        }
     }
 }
