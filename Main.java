@@ -2,8 +2,9 @@ import java.time.LocalDate;
 
 public class Main {
     public static void main(String[] args) {
-        Patient patient=new Patient("milan",12345,"9849966002","kathmandu",LocalDate.of(2005,5,15),
-        "milanparajuli0322@gmail.com","O-","megha","9843733855");
+        Patient patient=new Patient("milan",12345,"9849966002","kathmandu",LocalDate.of(2005,5,15),"milanparajuli0322@gmail.com","O-","megha","9843733855");
+        PatientManager patientmanager=new PatientManager();
+
         System.out.println("---Hospital manager---"); 
 
         System.out.println("Patient Id :"+patient.getPatientId());
@@ -29,5 +30,7 @@ public class Main {
         patient.setEmergencyContact("manju", "9802302345");
         System.out.print("Patient Emergencycontact :"+patient.getEmergencyContactName());
         System.out.println("-"+patient.getEmergencyContactPhone());
+        patientmanager.addPatient(patient);
+        System.out.println("Patient registered sucessfully");
     }
 }

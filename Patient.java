@@ -84,7 +84,7 @@ public class Patient {
         this.dateOfBirth=dateOfBirth;
 
 
-        if(email==null || !email.matches("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+\\.[A-Za-z]$"))
+        if(email==null || !email.matches("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$"))
         {
             throw new IllegalArgumentException("Invalid email address");   
         }
