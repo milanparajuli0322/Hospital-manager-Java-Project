@@ -59,4 +59,19 @@ public class PatientManager {
         }
         return false;
     }
+
+
+    public boolean updatePatientPhone(int patientId,String newPhone)
+    {
+        Patient patient=findPatientById(patientId);
+        if(patient==null)
+        {
+            return false;
+        }
+        else
+        {
+            patient.setPhone(newPhone);
+            return true;
+        }
+    }
 }

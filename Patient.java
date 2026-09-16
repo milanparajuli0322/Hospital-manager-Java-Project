@@ -304,4 +304,14 @@ public class Patient {
     {
         this.gender=Gender.OTHER;
     }
+
+
+    public void setPhone(String phone)
+    {
+        if(phone==null || !phone.matches("\\d{10}"))
+        {
+            throw new IllegalArgumentException("Phone number must contains 10 digits");
+        }
+        this.phone=phone.trim();
+    }
 }

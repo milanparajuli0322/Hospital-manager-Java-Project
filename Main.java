@@ -44,6 +44,7 @@ public class Main {
         System.out.println("Patient registered sucessfully");
         
 
+
         // Patient searching
         Patient foundPatient=patientmanager.findPatientById(12345);
         if(foundPatient==null)
@@ -65,6 +66,7 @@ public class Main {
         }
 
 
+
         // Patient removing
         boolean removed=patientmanager.removePatientById(12341);
         if(removed==true)
@@ -74,6 +76,19 @@ public class Main {
         else
         {
             System.out.println("Unable to remove patient");
+        }
+
+
+
+        // Patient updating
+        boolean updated=patientmanager.updatePatientPhone(12344, "1212121212");
+        if(updated==true)
+        {
+            System.out.println("Phone number updated sucessfully");
+        }
+        else
+        {
+            System.out.println("Patient not found");
         }
     }
 }
