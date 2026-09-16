@@ -39,4 +39,10 @@ public class PatientManager {
         }
         return null;
     }
+
+
+    public ArrayList<Patient> getAllPatients()
+    {
+        return new ArrayList<>(patients);
+    }
 }

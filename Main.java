@@ -1,4 +1,5 @@
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
@@ -44,6 +45,13 @@ public class Main {
         else
         {
             System.out.println("Patient found :"+foundPatient.getName());
+        }
+
+        ArrayList<Patient>AllPatients=patientmanager.getAllPatients();
+        System.out.println("Total patients :"+AllPatients.size());
+        for(Patient patients:AllPatients)
+        {
+            System.out.println(patients.getName()+"-"+patients.getPatientId());
         }
     }
 }
