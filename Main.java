@@ -3,9 +3,13 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-        Patient patient=new Patient("milan",12345,"9849966002","kathmandu",LocalDate.of(2005,5,15),"milanparajuli0322@gmail.com","O-","megha","9843733855");
-        PatientManager patientmanager=new PatientManager();
 
+        // First patient object
+        Patient patient=new Patient("milan",12345,"9849966002","kathmandu",LocalDate.of(2005,5,15),"milanparajuli0322@gmail.com","O-","megha","9843733855");
+
+        // Second patient object
+        Patient patient2 = new Patient("Ram",12341,"9811111111","Pokhara",LocalDate.of(2005, 3, 10),"ram@gmail.com","A+","raju","1234567899");
+        
         System.out.println("---Hospital manager---"); 
 
         System.out.println("Patient Id :"+patient.getPatientId());
@@ -31,13 +35,17 @@ public class Main {
         patient.setEmergencyContact("manju", "9802302345");
         System.out.print("Patient Emergencycontact :"+patient.getEmergencyContactName());
         System.out.println("-"+patient.getEmergencyContactPhone());
+
+
+        // Patient adding
+        PatientManager patientmanager=new PatientManager();
         patientmanager.addPatient(patient);
-        
-        Patient patient2 = new Patient("Ram",12341,"9811111111","Pokhara",LocalDate.of(2005, 3, 10),"ram@gmail.com","A+","raju","1234567899");
         patientmanager.addPatient(patient2);
         System.out.println("Patient registered sucessfully");
-        Patient foundPatient=patientmanager.findPatientById(12345);
+        
 
+        // Patient searching
+        Patient foundPatient=patientmanager.findPatientById(12345);
         if(foundPatient==null)
         {
             System.out.println("Patient not found");
@@ -47,11 +55,25 @@ public class Main {
             System.out.println("Patient found :"+foundPatient.getName());
         }
 
+
+        // Patients showing
         ArrayList<Patient>AllPatients=patientmanager.getAllPatients();
         System.out.println("Total patients :"+AllPatients.size());
         for(Patient patients:AllPatients)
         {
             System.out.println(patients.getName()+"-"+patients.getPatientId());
+        }
+
+
+        // Patient removing
+        boolean removed=patientmanager.removePatientById(12341);
+        if(removed==true)
+        {
+            System.out.println("Patient removed sucessfully");
+        }
+        else
+        {
+            System.out.println("Unable to remove patient");
         }
     }
 }

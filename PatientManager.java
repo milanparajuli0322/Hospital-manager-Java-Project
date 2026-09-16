@@ -45,4 +45,18 @@ public class PatientManager {
     {
         return new ArrayList<>(patients);
     }
+
+
+    public boolean removePatientById(int patientId)
+    {
+        for(Patient patient:patients)
+        {
+            if(patient.getPatientId()==patientId)
+            {
+                patients.remove(patient);
+                return true;
+            }
+        }
+        return false;
+    }
 }
