@@ -64,6 +64,10 @@ public class Patient {
         {
             throw new IllegalArgumentException("Dateofbirth cannot be in future");
         }
+        if(Period.between(dateOfBirth,LocalDate.now()).getYears()>120)
+        {
+            throw new IllegalArgumentException("Patient age cannot extend 120 years");
+        }
         this.dateOfBirth=dateOfBirth;
 
         if(email==null || !email.matches("^[A-Za-z0-9+_.-]+@gmail\\.com$"))

@@ -2,7 +2,7 @@ import java.time.LocalDate;
 
 public class Main {
     public static void main(String[] args) {
-        Patient patient=new Patient("milan",12345,"9849966002","kathmandu",LocalDate.of(2006,5,15),
+        Patient patient=new Patient("milan",12345,"9849966002","kathmandu",LocalDate.of(2005,5,15),
         "milanparajuli0322@gmail.com","O-","megha","9843733855");
         System.out.println("---Hospital manager---"); 
 
