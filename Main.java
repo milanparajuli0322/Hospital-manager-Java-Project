@@ -80,11 +80,24 @@ public class Main {
 
 
 
-        // Patient updating
-        boolean updated=patientmanager.updatePatientPhone(12344, "1212121212");
-        if(updated==true)
+        // Patient phone updating
+        boolean updatedPhone=patientmanager.updatePatientPhone(12344, "1212121212");
+        if(updatedPhone==true)
         {
             System.out.println("Phone number updated sucessfully");
+        }
+        else
+        {
+            System.out.println("Patient not found");
+        }
+
+
+
+        // Patient email updating
+        boolean updatedEmail=patientmanager.updatePatientEmail(12345, "xyz@gmail.com");
+        if(updatedEmail==true)
+        {
+            System.out.println("Email updated sucessfully");
         }
         else
         {

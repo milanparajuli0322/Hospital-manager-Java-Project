@@ -74,4 +74,19 @@ public class PatientManager {
             return true;
         }
     }
+
+
+    public boolean updatePatientEmail(int patientId,String newEmail)
+    {
+        Patient patient=findPatientById(patientId);
+        if(patient==null)
+        {
+            return false;
+        }
+        else
+        {
+            patient.setEmail(newEmail);
+            return true;
+        }
+    }
 }
