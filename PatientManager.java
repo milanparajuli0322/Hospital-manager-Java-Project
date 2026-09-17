@@ -121,7 +121,7 @@ public class PatientManager {
     }
 
 
-    public ArrayList<Patient> findPatientName(String name)
+    public ArrayList<Patient> findPatientByName(String name)
     {
         ArrayList<Patient> results=new ArrayList<>();
         if(name==null || name.trim().isEmpty())
@@ -133,6 +133,27 @@ public class PatientManager {
             for(Patient patient:patients)
             {
                 if((patient.getName().toLowerCase()).contains(name.toLowerCase().trim()))
+                {
+                    results.add(patient);
+                }
+            }
+            return results;
+        }
+    }
+
+
+    public ArrayList<Patient> findPatientByPhone(String phone)
+    {
+        ArrayList<Patient> results=new ArrayList<>();
+        if(phone==null || phone.trim().isEmpty())
+        {
+            throw new IllegalArgumentException("Search phone cannot be empty");
+        }
+        else
+        {
+            for(Patient patient:patients)
+            {
+                if(patient.getPhone().contains(phone.trim()))
                 {
                     results.add(patient);
                 }

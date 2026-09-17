@@ -81,7 +81,7 @@ public class Main {
 
 
         // Patient phone updating
-        boolean updatedPhone=patientmanager.updatePatientPhone(12345, "1212121212");
+        boolean updatedPhone=patientmanager.updatePatientPhone(12345, "9802159918");
         if(updatedPhone==true)
         {
             System.out.println("Phone number updated sucessfully");
@@ -133,8 +133,17 @@ public class Main {
 
 
         // Patient name searching
-        ArrayList<Patient> results=patientmanager.findPatientName("mil");
-        for(Patient patients:results)
+        ArrayList<Patient> resultName=patientmanager.findPatientByName("mil");
+        for(Patient patients:resultName)
+        {
+            System.out.println(patients.getPatientId()+"-"+patients.getName());
+        }
+
+
+
+        // Patient phone seaching
+        ArrayList<Patient> resultPhone=patientmanager.findPatientByPhone("98021");
+        for(Patient patients:resultPhone)
         {
             System.out.println(patients.getPatientId()+"-"+patients.getName());
         }
