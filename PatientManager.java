@@ -104,4 +104,19 @@ public class PatientManager {
             return true;
         }
     }
+
+
+    public boolean updatePatientEmergencycontact(int patientId,String newEmergencyContactName,String newEmergencyContactPhone)
+    {
+        Patient patient=findPatientById(patientId);
+        if(patient==null)
+        {
+            return false;
+        }
+        else
+        {
+            patient.setEmergencyContact(newEmergencyContactName, newEmergencyContactPhone);
+            return true;
+        }
+    }
 }

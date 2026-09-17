@@ -116,5 +116,19 @@ public class Main {
         {
             System.out.println("Patient not found");
         }
+
+
+
+        // Patient emergency contact updating
+        boolean updatedEmergencyContact=patientmanager.updatePatientEmergencycontact(12345,"lila","9812121212");
+        if(updatedEmergencyContact==true)
+        {
+            System.out.println("Emergency contact updated sucessfully");
+        }
+        else
+        {
+            System.out.println("Patient not found");
+        }
+
     }
 }
