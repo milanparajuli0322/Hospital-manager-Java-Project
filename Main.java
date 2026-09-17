@@ -147,5 +147,14 @@ public class Main {
         {
             System.out.println(patients.getPatientId()+"-"+patients.getName());
         }
+
+
+
+        // Patient email searching
+        ArrayList<Patient> resultEmail=patientmanager.findPatientByEmail("xyz@gmail.com");
+        for(Patient patients:resultEmail)
+        {
+            System.out.println(patients.getPatientId()+"-"+patient.getName());
+        }
     }
 }

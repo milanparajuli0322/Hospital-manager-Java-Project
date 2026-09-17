@@ -161,4 +161,25 @@ public class PatientManager {
             return results;
         }
     }
+
+
+    public ArrayList<Patient> findPatientByEmail(String email)
+    {
+        ArrayList<Patient> results=new ArrayList<>();
+        if(email==null || email.trim().isEmpty())
+        {
+            throw new IllegalArgumentException("Search email cannot be empty");
+        }
+        else
+        {
+            for(Patient patient:patients)
+            {
+                if(patient.getEmail().contains(email.trim()))
+                {
+                    results.add(patient);
+                }
+            }
+            return results;
+        }
+    }
 }
