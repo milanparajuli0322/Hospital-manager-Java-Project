@@ -166,5 +166,13 @@ public class Main {
             System.out.println(patients.getPatientId()+"-"+patients.getName());
         }
 
+
+
+        // Patient status filtering
+        ArrayList<Patient>resultFilterByStatus=patientmanager.filterByStatus(Patient.Status.ACTIVE);
+        for(Patient patients:resultFilterByStatus)
+        {
+            System.out.println(patients.getPatientId()+"-"+patients.getName());
+        }
     }
 }

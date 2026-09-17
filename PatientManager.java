@@ -201,4 +201,25 @@ public class PatientManager {
             return results;
         }
     }
+
+
+    public ArrayList<Patient> filterByStatus(Patient.Status status)
+    {
+        ArrayList<Patient> results=new ArrayList<>();
+        if(status==null)
+        {
+            throw new IllegalArgumentException("Status cannot be empty");
+        }
+        else
+        {
+            for(Patient patient:patients)
+            {
+                if(patient.getStatus()==status)
+                {
+                    results.add(patient);
+                }
+            }
+            return results;
+        }
+    }
 }
