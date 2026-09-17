@@ -324,4 +324,14 @@ public class Patient {
         }
         this.email=email.trim();
     }
+
+
+    public void setAddress(String address)
+    {
+        if(address==null || address.trim().isEmpty())
+        {
+            throw new IllegalArgumentException("Address cannot be empty");
+        }
+        this.address=address.trim();
+    }
 }

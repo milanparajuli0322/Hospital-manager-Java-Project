@@ -89,4 +89,19 @@ public class PatientManager {
             return true;
         }
     }
+
+
+    public boolean updatePatientAddress(int patientId,String newAddress)
+    {
+        Patient patient=findPatientById(patientId);
+        if(patient==null)
+        {
+            return false;
+        }
+        else
+        {
+            patient.setAddress(newAddress);
+            return true;
+        }
+    }
 }
