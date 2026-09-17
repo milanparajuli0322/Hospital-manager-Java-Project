@@ -180,5 +180,10 @@ public class Main {
         // Patient counting by status
         int activeCount=patientmanager.countPatientByStatus(Patient.Status.ACTIVE);
         System.out.println("Active patients :"+activeCount);
+
+
+
+        // Patient counting by registered
+        System.out.println("Total registered patients :"+patientmanager.countRegisteredPatients());
     }
 }

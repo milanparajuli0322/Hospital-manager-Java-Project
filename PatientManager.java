@@ -243,4 +243,10 @@ public class PatientManager {
             return count;
         }
     }
+
+
+    public int countRegisteredPatients()
+    {
+        return patients.size();
+    }
 }
