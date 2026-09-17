@@ -156,5 +156,15 @@ public class Main {
         {
             System.out.println(patients.getPatientId()+"-"+patient.getName());
         }
+
+
+
+        // Patient bloodgroup searching
+        ArrayList<Patient> resultBloodgroup=patientmanager.findPatientByBloodgroup("O-");
+        for(Patient patients:resultBloodgroup)
+        {
+            System.out.println(patients.getPatientId()+"-"+patients.getName());
+        }
+
     }
 }

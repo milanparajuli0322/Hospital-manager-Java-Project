@@ -182,4 +182,23 @@ public class PatientManager {
             return results;
         }
     }
+
+
+    public ArrayList<Patient> findPatientByBloodgroup(String bloodgroup)
+    {
+        ArrayList<Patient> results=new ArrayList<>();
+        if(bloodgroup==null || bloodgroup.trim().isEmpty())
+        {
+            throw new IllegalArgumentException("Blood group cannot be empty");
+        }
+        else
+        {
+            for(Patient patient:patients)
+            {
+                if(patient.getBloodGroup().trim().contains(bloodgroup))
+                    results.add(patient);
+            }
+            return results;
+        }
+    }
 }
