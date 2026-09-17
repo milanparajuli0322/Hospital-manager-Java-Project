@@ -119,4 +119,25 @@ public class PatientManager {
             return true;
         }
     }
+
+
+    public ArrayList<Patient> findPatientName(String name)
+    {
+        ArrayList<Patient> results=new ArrayList<>();
+        if(name==null || name.trim().isEmpty())
+        {
+            throw new IllegalArgumentException("Search name cannot be empty");
+        }
+        else
+        {
+            for(Patient patient:patients)
+            {
+                if((patient.getName().toLowerCase()).contains(name.toLowerCase().trim()))
+                {
+                    results.add(patient);
+                }
+            }
+            return results;
+        }
+    }
 }

@@ -130,5 +130,13 @@ public class Main {
             System.out.println("Patient not found");
         }
 
+
+
+        // Patient name searching
+        ArrayList<Patient> results=patientmanager.findPatientName("mil");
+        for(Patient patients:results)
+        {
+            System.out.println(patients.getPatientId()+"-"+patients.getName());
+        }
     }
 }
