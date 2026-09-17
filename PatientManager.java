@@ -222,4 +222,25 @@ public class PatientManager {
             return results;
         }
     }
+
+
+    public int countPatientByStatus(Patient.Status status)
+    {
+        int count=0;
+        if(status==null)
+        {
+            throw new IllegalArgumentException("Status cannot be empty");
+        }
+        else
+        {
+            for(Patient patient:patients)
+            {
+                if(patient.getStatus()==status)
+                {
+                    count++;
+                }
+            }
+            return count;
+        }
+    }
 }

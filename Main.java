@@ -174,5 +174,11 @@ public class Main {
         {
             System.out.println(patients.getPatientId()+"-"+patients.getName());
         }
+
+
+
+        // Patient counting by status
+        int activeCount=patientmanager.countPatientByStatus(Patient.Status.ACTIVE);
+        System.out.println("Active patients :"+activeCount);
     }
 }
