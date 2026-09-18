@@ -1,3 +1,4 @@
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 
@@ -257,6 +258,24 @@ public class PatientManager {
         if(gender==null)
         {
             throw new IllegalArgumentException("Gender cannot be empty");
+        }
+        else
+        {
+            for(Patient patient:patients)
+            {
+                results.add(patient);
+            }
+            return results;
+        }
+    }
+
+
+    public ArrayList<Patient> findPatientByRegistrationdate(LocalDate date)
+    {
+        ArrayList<Patient> results=new ArrayList<>();
+        if(date==null)
+        {
+            throw new IllegalArgumentException("Registration date cannot be empty");
         }
         else
         {

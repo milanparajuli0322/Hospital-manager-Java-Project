@@ -194,5 +194,14 @@ public class Main {
         {
             System.out.println(patients.getPatientId()+"-"+patients.getName());
         }
+
+
+
+        // Patient searching by registration date
+        ArrayList<Patient> resultRegistrationdate=patientmanager.findPatientByRegistrationdate(LocalDate.of(2007,02,03));
+        for(Patient patients:resultRegistrationdate)
+        {
+            System.out.println(patients.getPatientId()+"-"+patients.getName());
+        }
     }
 }
