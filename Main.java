@@ -185,5 +185,14 @@ public class Main {
 
         // Patient counting by registered
         System.out.println("Total registered patients :"+patientmanager.countRegisteredPatients());
+
+
+
+        // Patient gender filtering
+        ArrayList<Patient> resultFilterByGender=patientmanager.filterPatientByGender(Patient.Gender.MALE);
+        for(Patient patients:resultFilterByGender)
+        {
+            System.out.println(patients.getPatientId()+"-"+patients.getName());
+        }
     }
 }

@@ -249,4 +249,22 @@ public class PatientManager {
     {
         return patients.size();
     }
+
+
+    public ArrayList<Patient> filterPatientByGender(Patient.Gender gender)
+    {
+        ArrayList<Patient> results =new ArrayList<>();
+        if(gender==null)
+        {
+            throw new IllegalArgumentException("Gender cannot be empty");
+        }
+        else
+        {
+            for(Patient patient:patients)
+            {
+                results.add(patient);
+            }
+            return results;
+        }
+    }
 }
