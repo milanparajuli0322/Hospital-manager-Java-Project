@@ -230,5 +230,15 @@ public class Main {
         {
             System.out.println(patients.getPatientId()+"-"+patients.getName());
         }
+
+
+
+        // Patient searching by medical condition
+        ArrayList<Patient> resultFindPatientByMedicalconditions=patientmanager.findPatientByMedicalconditions("vomit");
+        for(Patient patients:resultFindPatientByMedicalconditions)
+        {
+            System.out.println(patients.getPatientId()+"-"+patients.getName());
+        }
+
     }
 }

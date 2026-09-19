@@ -222,7 +222,7 @@ public class Patient {
                 throw new IllegalArgumentException("Medical condition "+condition+" already exists");
             }
         }
-        medicalConditions.add(condition);
+        medicalConditions.add(condition.toUpperCase());
     }
 
     

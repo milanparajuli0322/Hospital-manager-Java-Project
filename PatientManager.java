@@ -321,4 +321,23 @@ public class PatientManager {
         }
         return results;
     }
+
+
+    public ArrayList<Patient> findPatientByMedicalconditions(String condition)
+    {
+        ArrayList<Patient> results=new ArrayList<>();
+        condition=condition.toUpperCase();
+        if(condition==null || condition.trim().isEmpty())
+        {
+            throw new IllegalArgumentException("Medical condition search cannot be empty");
+        }
+        for(Patient patient:patients)
+        {
+            if(patient.getMedicalConditions().contains(condition))
+            {
+                results.add(patient);
+            }
+        }
+        return results;
+    }
 }
