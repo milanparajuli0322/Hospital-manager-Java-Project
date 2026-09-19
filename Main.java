@@ -221,5 +221,14 @@ public class Main {
         {
             System.out.println(patients.getPatientId()+"-"+patients.getName());
         }
+
+
+
+        // Patient filtering by age
+        ArrayList<Patient> resultFilterPatientByAge=patientmanager.filterPatentByAge(10, 25);
+        for(Patient patients:resultFilterPatientByAge)
+        {
+            System.out.println(patients.getPatientId()+"-"+patients.getName());
+        }
     }
 }

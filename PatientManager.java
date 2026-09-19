@@ -303,4 +303,22 @@ public class PatientManager {
         results.sort(Comparator.comparingInt(Patient::getPatientId));
         return results;
     }
+
+
+    public ArrayList<Patient> filterPatentByAge(int minAge,int maxAge)
+    {
+        if(minAge<0 || maxAge<minAge)
+        {
+            throw new IllegalArgumentException("Invalid age range");
+        }
+        ArrayList<Patient> results=new ArrayList<>();
+        for(Patient patient:patients)
+        {
+            if(patient.getAge()<maxAge && patient.getAge()>minAge)
+            {
+                results.add(patient);
+            }
+        }
+        return results;
+    }
 }
