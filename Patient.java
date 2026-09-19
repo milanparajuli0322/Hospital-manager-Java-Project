@@ -210,6 +210,7 @@ public class Patient {
 
     public void addMedicalConditions(String condition)
     {
+        condition=condition.toUpperCase();
         if(condition==null || condition.trim().isEmpty())
         {
             throw new IllegalArgumentException("Medical condition cannot be empty");
@@ -229,6 +230,7 @@ public class Patient {
     public void removeMedicalConditions(String condition)
     {
         boolean found=true;
+        condition=condition.toUpperCase();
         if(condition==null || condition.trim().isEmpty())
         {
             throw new IllegalArgumentException("Medical condition cannot be empty");

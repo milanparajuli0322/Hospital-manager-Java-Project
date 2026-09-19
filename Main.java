@@ -31,7 +31,8 @@ public class Main {
         patient.addMedicalConditions("asthma");
         patient.addMedicalConditions("jaundice");
         System.out.println("Patient Medicalconditions :"+patient.getMedicalConditions());
-        patient.removeMedicalConditions("asthma");
+        patient.removeMedicalConditions("ASthma");
+        System.out.println("Patient Medicalconditions :"+patient.getMedicalConditions());
         patient.setEmergencyContact("manju", "9802302345");
         System.out.print("Patient Emergencycontact :"+patient.getEmergencyContactName());
         System.out.println("-"+patient.getEmergencyContactPhone());
@@ -240,5 +241,8 @@ public class Main {
             System.out.println(patients.getPatientId()+"-"+patients.getName());
         }
 
+
+
+        // 
     }
 }
