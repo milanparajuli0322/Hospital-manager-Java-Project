@@ -1,5 +1,6 @@
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Comparator;
 
 
 public class PatientManager {
@@ -285,5 +286,13 @@ public class PatientManager {
             }
             return results;
         }
+    }
+
+    
+    public ArrayList<Patient> sortPatientByName()
+    {
+        ArrayList<Patient> results=getAllPatients();
+        results.sort(Comparator.comparing(Patient::getName,String.CASE_INSENSITIVE_ORDER));
+        return results;
     }
 }

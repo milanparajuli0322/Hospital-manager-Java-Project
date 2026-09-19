@@ -203,5 +203,14 @@ public class Main {
         {
             System.out.println(patients.getPatientId()+"-"+patients.getName());
         }
+
+
+
+        // Patient sorting by name
+        ArrayList<Patient> resultSortedPatientByName=patientmanager.sortPatientByName();
+        for(Patient patients:resultSortedPatientByName)
+        {
+            System.out.println(patients.getPatientId()+"-"+patients.getName());
+        }
     }
 }
