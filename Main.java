@@ -212,5 +212,14 @@ public class Main {
         {
             System.out.println(patients.getPatientId()+"-"+patients.getName());
         }
+
+
+
+        // Patient sorting by id
+        ArrayList<Patient> resultSortedPatientById=patientmanager.sortPatientById();
+        for(Patient patients:resultSortedPatientById)
+        {
+            System.out.println(patients.getPatientId()+"-"+patients.getName());
+        }
     }
 }

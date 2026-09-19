@@ -295,4 +295,12 @@ public class PatientManager {
         results.sort(Comparator.comparing(Patient::getName,String.CASE_INSENSITIVE_ORDER));
         return results;
     }
+
+
+    public ArrayList<Patient> sortPatientById()
+    {
+        ArrayList<Patient> results=getAllPatients();
+        results.sort(Comparator.comparingInt(Patient::getPatientId));
+        return results;
+    }
 }
