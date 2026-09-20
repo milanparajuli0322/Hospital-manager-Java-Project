@@ -340,4 +340,23 @@ public class PatientManager {
         }
         return results;
     }
+
+
+    public  int countPatientByBloodgroup(String bloodgroup)
+    {
+        if(bloodgroup==null || bloodgroup.trim().isEmpty())
+        {
+            throw new IllegalArgumentException("Blood group count search cannot be empty");
+        }
+        bloodgroup=bloodgroup.trim().toUpperCase();
+        int count=0;
+        for(Patient patient:patients)
+        {
+            if(patient.getBloodGroup().equalsIgnoreCase(bloodgroup))
+            {
+                count++;
+            }
+        }
+        return count;
+    }
 }

@@ -45,7 +45,6 @@ public class Main {
         System.out.println("Patient registered sucessfully");
         
 
-
         // Patient searching
         Patient foundPatient=patientmanager.findPatientById(12345);
         if(foundPatient==null)
@@ -67,7 +66,6 @@ public class Main {
         }
 
 
-
         // Patient removing
         boolean removed=patientmanager.removePatientById(12341);
         if(removed==true)
@@ -78,7 +76,6 @@ public class Main {
         {
             System.out.println("Unable to remove patient");
         }
-
 
 
         // Patient phone updating
@@ -93,7 +90,6 @@ public class Main {
         }
 
 
-
         // Patient email updating
         boolean updatedEmail=patientmanager.updatePatientEmail(12345, "xyz@gmail.com");
         if(updatedEmail==true)
@@ -104,7 +100,6 @@ public class Main {
         {
             System.out.println("Patient not found");
         }
-
 
 
         // Patient address updating
@@ -119,7 +114,6 @@ public class Main {
         }
 
 
-
         // Patient emergency contact updating
         boolean updatedEmergencyContact=patientmanager.updatePatientEmergencycontact(12345,"lila","9812121212");
         if(updatedEmergencyContact==true)
@@ -132,14 +126,12 @@ public class Main {
         }
 
 
-
         // Patient name searching
         ArrayList<Patient> resultName=patientmanager.findPatientByName("mil");
         for(Patient patients:resultName)
         {
             System.out.println(patients.getPatientId()+"-"+patients.getName());
         }
-
 
 
         // Patient phone seaching
@@ -150,14 +142,12 @@ public class Main {
         }
 
 
-
         // Patient email searching
         ArrayList<Patient> resultEmail=patientmanager.findPatientByEmail("xyz@gmail.com");
         for(Patient patients:resultEmail)
         {
             System.out.println(patients.getPatientId()+"-"+patient.getName());
         }
-
 
 
         // Patient bloodgroup searching
@@ -168,7 +158,6 @@ public class Main {
         }
 
 
-
         // Patient status filtering
         ArrayList<Patient>resultFilterByStatus=patientmanager.filterByStatus(Patient.Status.ACTIVE);
         for(Patient patients:resultFilterByStatus)
@@ -177,16 +166,13 @@ public class Main {
         }
 
 
-
         // Patient counting by status
         int activeCount=patientmanager.countPatientByStatus(Patient.Status.ACTIVE);
         System.out.println("Active patients :"+activeCount);
 
 
-
         // Patient counting by registered
         System.out.println("Total registered patients :"+patientmanager.countRegisteredPatients());
-
 
 
         // Patient gender filtering
@@ -197,14 +183,12 @@ public class Main {
         }
 
 
-
         // Patient searching by registration date
         ArrayList<Patient> resultRegistrationdate=patientmanager.findPatientByRegistrationdate(LocalDate.of(2007,02,03));
         for(Patient patients:resultRegistrationdate)
         {
             System.out.println(patients.getPatientId()+"-"+patients.getName());
         }
-
 
 
         // Patient sorting by name
@@ -215,14 +199,12 @@ public class Main {
         }
 
 
-
         // Patient sorting by id
         ArrayList<Patient> resultSortedPatientById=patientmanager.sortPatientById();
         for(Patient patients:resultSortedPatientById)
         {
             System.out.println(patients.getPatientId()+"-"+patients.getName());
         }
-
 
 
         // Patient filtering by age
@@ -233,7 +215,6 @@ public class Main {
         }
 
 
-
         // Patient searching by medical condition
         ArrayList<Patient> resultFindPatientByMedicalconditions=patientmanager.findPatientByMedicalconditions("vomit");
         for(Patient patients:resultFindPatientByMedicalconditions)
@@ -242,7 +223,7 @@ public class Main {
         }
 
 
-
-        // 
+        // Patient counting by bloodgroup
+        System.out.println("o- patients "+patientmanager.countPatientByBloodgroup("o+"));
     }
 }
