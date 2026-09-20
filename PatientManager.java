@@ -377,4 +377,22 @@ public class PatientManager {
         }
         return count;
     }
+
+
+    public int countPatientsByStatus(Patient.Status status)
+    {
+        if (status == null)
+        {
+            throw new IllegalArgumentException("Status cannot be null");
+        }
+        int count = 0;
+        for (Patient patient : patients)
+        {
+            if (patient.getStatus() == status)
+            {
+                count++;
+            }
+        }
+        return count;
+    }
 }

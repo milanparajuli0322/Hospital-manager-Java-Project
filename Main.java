@@ -229,5 +229,9 @@ public class Main {
 
         // Patient counting by gender
         System.out.println("Male patients :"+patientmanager.countPatientByGender(Patient.Gender.MALE));
+
+
+        // Patient counting by status
+        System.out.println("Active patients :"+patientmanager.countPatientByStatus(Patient.Status.ACTIVE));
     }
 }
