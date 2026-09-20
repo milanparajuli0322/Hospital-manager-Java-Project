@@ -224,6 +224,10 @@ public class Main {
 
 
         // Patient counting by bloodgroup
-        System.out.println("o- patients "+patientmanager.countPatientByBloodgroup("o+"));
+        System.out.println("o- patients :"+patientmanager.countPatientByBloodgroup("o+"));
+
+
+        // Patient counting by gender
+        System.out.println("Male patients :"+patientmanager.countPatientByGender(Patient.Gender.MALE));
     }
 }

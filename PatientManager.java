@@ -359,4 +359,22 @@ public class PatientManager {
         }
         return count;
     }
+
+
+    public int countPatientByGender(Patient.Gender gender)
+    {
+        if(gender==null)
+        {
+            throw new IllegalArgumentException("Gender count search cannot be empty");
+        }
+        int count=0;
+        for(Patient patient:patients)
+        {
+            if(patient.getGender()==gender)
+            {
+                count++;
+            }
+        }
+        return count;
+    }
 }
