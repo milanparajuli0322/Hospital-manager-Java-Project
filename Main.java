@@ -233,5 +233,12 @@ public class Main {
 
         // Patient counting by status
         System.out.println("Active patients :"+patientmanager.countPatientByStatus(Patient.Status.ACTIVE));
+
+
+        // First doctor object
+        Doctor doctor=new Doctor(1234,"john","mbbs","9800000000","john@gmail.com");
+
+        System.out.println("Doctor name :"+doctor.getName());
+        System.out.println("Doctor Id :"+doctor.getDoctorId());
     }
 }
