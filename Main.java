@@ -249,5 +249,15 @@ public class Main {
         doctormanager.addDoctor(doctor);
         System.out.println("Total doctors :"+doctormanager.getAllDoctors().size());
 
+
+        Doctor foundDoctor=doctormanager.findDoctorById(1234);
+        if(foundDoctor==null)
+        {
+            System.out.println("No doctor found");
+        }
+        else
+        {
+            System.out.println(foundDoctor.getDoctorId()+"-"+foundDoctor.getName());
+        }
     }
 }
