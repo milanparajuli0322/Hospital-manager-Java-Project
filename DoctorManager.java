@@ -43,5 +43,26 @@ public class DoctorManager {
         }
         return null;
     }
+
+
+    public boolean removeDoctorId(int doctorId)
+    {
+        if(doctorId<=0)
+        {
+            throw new IllegalArgumentException("Doctor id remove cannot be empty");
+        }
+        else
+        {
+            for(Doctor doctor:doctors)
+            {
+                if(doctor.getDoctorId()==doctorId)
+                {
+                    doctors.remove(doctor);
+                    return true;
+                }
+            }
+            return false;
+        }
+    }
 }
 

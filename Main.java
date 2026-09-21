@@ -259,5 +259,16 @@ public class Main {
         {
             System.out.println(foundDoctor.getDoctorId()+"-"+foundDoctor.getName());
         }
+
+
+        boolean removeDoctorById=doctormanager.removeDoctorId(12345);
+        if(removeDoctorById==false)
+        {
+            System.out.println("No doctor found");
+        }
+        else
+        {
+            System.out.println("Doctor removed sucessfully");
+        }
     }
 }
