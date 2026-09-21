@@ -240,5 +240,7 @@ public class Main {
 
         System.out.println("Doctor name :"+doctor.getName());
         System.out.println("Doctor Id :"+doctor.getDoctorId());
+        DoctorManager doctormanager=new DoctorManager();
+        System.out.println("Total doctors :"+doctormanager.getAllDoctors().size());
     }
 }
