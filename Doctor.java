@@ -1,41 +1,58 @@
+
 public class Doctor
 {
     private int doctorId;
     private String name;
-    private String specialization;
     private String phone;
     private String email;
+    private Specialization specialization;
 
-    public Doctor(int doctorId, String name, String specialization,String phone, String email)
+    public enum Specialization
+    {
+        CARDIOLOGY,
+        DERMATOLOGY,
+        NEUROLOGY,
+        PEDIATRICS,
+        ORTHOPEDICS,
+        GENERAL_MEDICINE,
+        SURGERY
+    }
+
+    public Doctor(int doctorId, String name,Specialization specialization,String phone, String email)
     {
         if (doctorId <= 0)
         {
-            throw new IllegalArgumentException("Doctor ID must be positive");
+            throw new IllegalArgumentException(
+                "Doctor ID must be positive");
         }
         this.doctorId = doctorId;
 
         if (name == null || name.trim().isEmpty())
         {
-            throw new IllegalArgumentException("Name cannot be empty");
+            throw new IllegalArgumentException(
+                "Name cannot be empty");
         }
         this.name = name.trim();
 
-        if (specialization == null || specialization.trim().isEmpty())
+        if (specialization == null)
         {
-            throw new IllegalArgumentException("Specialization cannot be empty");
+            throw new IllegalArgumentException(
+                "Specialization cannot be null");
         }
-        this.specialization = specialization.trim().toUpperCase();
+        this.specialization = specialization;
 
         if (phone == null || !phone.matches("\\d{10}"))
         {
-            throw new IllegalArgumentException("Phone must contain 10 digits");
+            throw new IllegalArgumentException(
+                "Phone must contain 10 digits");
         }
         this.phone = phone;
 
-        if (email == null || !email.matches(
-                "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$"))
+        if (email == null || !email.trim().matches(
+            "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$"))
         {
-            throw new IllegalArgumentException("Invalid email");
+            throw new IllegalArgumentException(
+                "Invalid email");
         }
         this.email = email.trim();
     }
@@ -50,7 +67,7 @@ public class Doctor
         return name;
     }
 
-    public String getSpecialization()
+    public Specialization getSpecialization()
     {
         return specialization;
     }

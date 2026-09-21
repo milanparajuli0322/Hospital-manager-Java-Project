@@ -236,7 +236,7 @@ public class Main {
 
 
         // First doctor object
-        Doctor doctor=new Doctor(1234,"john","mbbs","9800000000","john@gmail.com");
+        Doctor doctor=new Doctor(1234,"john",Doctor.Specialization.CARDIOLOGY,"9800000000","john@gmail.com");
 
         System.out.println("Doctor name :"+doctor.getName());
         System.out.println("Doctor Id :"+doctor.getDoctorId());
