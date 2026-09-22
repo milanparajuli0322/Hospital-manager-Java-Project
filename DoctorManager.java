@@ -64,5 +64,26 @@ public class DoctorManager {
             return false;
         }
     }
+
+
+    public boolean updateDoctorPhone(int doctorId,String newPhone)
+    {
+        if(newPhone==null)
+        {
+            throw new IllegalArgumentException("Phone update cannot be empty");
+        }
+        else
+        {
+            for(Doctor doctor:doctors)
+            {
+                if(doctor.getDoctorId()==doctorId)
+                {
+                    doctor.setPhone(newPhone);
+                    return true;
+                }
+            }
+            return false;
+        }
+    }
 }
 

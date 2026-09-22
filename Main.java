@@ -270,5 +270,9 @@ public class Main {
         {
             System.out.println("Doctor removed sucessfully");
         }
+
+
+        doctormanager.updateDoctorPhone(1234, "9700000000");
+        System.out.println("Updated phone "+doctor.getPhone());
     }
 }
