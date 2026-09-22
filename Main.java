@@ -298,5 +298,13 @@ public class Main {
         {
             System.out.println("Doctor not found");
         }
+
+
+        // Doctor searching by name
+        ArrayList<Doctor> resultDoctorFindByName=doctormanager.findDoctorByName("john");
+        for(Doctor doctors:resultDoctorFindByName)
+        {
+            System.out.println(doctors.getDoctorId()+"-"+doctors.getName());
+        }
     }
 }

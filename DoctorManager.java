@@ -106,5 +106,26 @@ public class DoctorManager {
             return false;
         }
     }
+
+
+    public ArrayList<Doctor> findDoctorByName(String name)
+    {
+        ArrayList<Doctor> results=new ArrayList<>();
+        if(name==null)
+        {
+            throw new IllegalArgumentException("Doctor name search cannot be empty");
+        }
+        else
+        {
+            for(Doctor doctor:doctors)
+            {
+                if(doctor.getName().toLowerCase().contains(name.toLowerCase()))
+                {
+                    results.add(doctor);
+                }
+            }
+            return results;
+        }
+    }
 }
 
