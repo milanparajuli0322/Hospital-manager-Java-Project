@@ -85,5 +85,26 @@ public class DoctorManager {
             return false;
         }
     }
+
+
+    public boolean updateDoctorEmail(int doctorId,String newEmail)
+    {
+        if(newEmail==null)
+        {
+            throw new IllegalArgumentException("Email update cannot be empty");
+        }
+        else
+        {
+            for(Doctor doctor:doctors)
+            {
+                if(doctor.getDoctorId()==doctorId)
+                {
+                    doctor.setEmail(newEmail);
+                    return true;
+                }
+            }
+            return false;
+        }
+    }
 }
 

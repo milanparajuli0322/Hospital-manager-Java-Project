@@ -242,14 +242,17 @@ public class Main {
         System.out.println("Doctor Id :"+doctor.getDoctorId());
 
 
+        // Doctor displaying
         DoctorManager doctormanager=new DoctorManager();
         System.out.println("Total doctors :"+doctormanager.getAllDoctors().size());
 
 
+        // Doctor adding
         doctormanager.addDoctor(doctor);
         System.out.println("Total doctors :"+doctormanager.getAllDoctors().size());
 
 
+        // Doctor searching
         Doctor foundDoctor=doctormanager.findDoctorById(1234);
         if(foundDoctor==null)
         {
@@ -261,6 +264,7 @@ public class Main {
         }
 
 
+        // Doctor removing
         boolean removeDoctorById=doctormanager.removeDoctorId(12345);
         if(removeDoctorById==false)
         {
@@ -272,7 +276,27 @@ public class Main {
         }
 
 
-        doctormanager.updateDoctorPhone(1234, "9700000000");
-        System.out.println("Updated phone "+doctor.getPhone());
+        // Doctor updating phone
+        boolean updateDoctorPhoneByDoctorId=doctormanager.updateDoctorPhone(1234, "9700000000");
+        if(updateDoctorPhoneByDoctorId==true)
+        {
+            System.out.println("Doctor phone updated sucessfully");
+        }
+        else
+        {
+            System.out.println("Doctor not found");
+        }
+
+
+        // Doctor updating email
+        boolean updateDoctorEmailByDoctorId=doctormanager.updateDoctorEmail(1234, "jonny@gmail.com");
+        if(updateDoctorEmailByDoctorId==true)
+        {
+            System.out.println("Doctor email updated sucessfully");
+        }
+        else
+        {
+            System.out.println("Doctor not found");
+        }
     }
 }
