@@ -157,5 +157,13 @@ public class DoctorManager {
         results.sort(Comparator.comparing(Doctor::getName,String.CASE_INSENSITIVE_ORDER));
         return results;
     }
+
+
+    public ArrayList<Doctor> sortDoctorById()
+    {
+        ArrayList<Doctor> results=new ArrayList<>(doctors);
+        results.sort(Comparator.comparingInt(Doctor::getDoctorId));
+        return results;
+    }
 }
 

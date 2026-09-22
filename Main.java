@@ -316,8 +316,17 @@ public class Main {
         }
 
 
+        // Doctor sorting by name
         ArrayList<Doctor> resultDoctorByName=doctormanager.sortDoctorByName();
         for(Doctor doctors:resultDoctorByName)
+        {
+            System.out.println(doctors.getDoctorId()+"-"+doctors.getName());
+        }
+
+
+        // Doctor sorting by doctor Id
+        ArrayList<Doctor> resultDoctorById=doctormanager.sortDoctorById();
+        for(Doctor doctors:resultDoctorById)
         {
             System.out.println(doctors.getDoctorId()+"-"+doctors.getName());
         }
