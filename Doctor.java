@@ -81,4 +81,13 @@ public class Doctor
     {
         return email;
     }
+
+    public void setPhone(String phone)
+    {
+        if(phone==null || phone.trim().isEmpty())
+        {
+            throw new IllegalArgumentException("Phone update cannot be empty");
+        }
+        this.phone=phone;
+    }
 }
