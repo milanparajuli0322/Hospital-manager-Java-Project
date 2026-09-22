@@ -314,5 +314,12 @@ public class Main {
         {
             System.out.println(doctors.getDoctorId()+"-"+doctors.getName());
         }
+
+
+        ArrayList<Doctor> resultDoctorByName=doctormanager.sortDoctorByName();
+        for(Doctor doctors:resultDoctorByName)
+        {
+            System.out.println(doctors.getDoctorId()+"-"+doctors.getName());
+        }
     }
 }

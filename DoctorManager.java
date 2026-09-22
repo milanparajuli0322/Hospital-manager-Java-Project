@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Comparator;
 
 public class DoctorManager {
     final private ArrayList<Doctor> doctors;
@@ -147,6 +148,14 @@ public class DoctorManager {
             }
             return results;
         }
+    }
+
+
+    public ArrayList<Doctor> sortDoctorByName()
+    {
+        ArrayList<Doctor> results=new ArrayList<>(doctors);
+        results.sort(Comparator.comparing(Doctor::getName,String.CASE_INSENSITIVE_ORDER));
+        return results;
     }
 }
 
