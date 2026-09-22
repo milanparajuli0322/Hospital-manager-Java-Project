@@ -330,5 +330,10 @@ public class Main {
         {
             System.out.println(doctors.getDoctorId()+"-"+doctors.getName());
         }
+
+
+        System.out.println(doctor.getStatus());
+        doctor.setStatus(Doctor.Status.UNAVAILABLE);
+        System.out.println(doctor.getStatus());
     }
 }
