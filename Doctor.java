@@ -90,4 +90,13 @@ public class Doctor
         }
         this.phone=phone;
     }
+
+    public void setEmail(String email)
+    {
+        if(email==null || email.trim().isEmpty())
+        {
+            throw new IllegalArgumentException("Email update cannot be empty");
+        }
+        this.email=email;
+    }
 }
