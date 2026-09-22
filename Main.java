@@ -306,5 +306,13 @@ public class Main {
         {
             System.out.println(doctors.getDoctorId()+"-"+doctors.getName());
         }
+
+
+        // Doctor searching by specialization
+        ArrayList<Doctor>resultDoctorFindBySpecialization=doctormanager.findDoctorBySpecialization(Doctor.Specialization.CARDIOLOGY);
+        for(Doctor doctors:resultDoctorFindBySpecialization)
+        {
+            System.out.println(doctors.getDoctorId()+"-"+doctors.getName());
+        }
     }
 }

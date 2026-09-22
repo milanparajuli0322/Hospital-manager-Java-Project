@@ -111,7 +111,7 @@ public class DoctorManager {
     public ArrayList<Doctor> findDoctorByName(String name)
     {
         ArrayList<Doctor> results=new ArrayList<>();
-        if(name==null)
+        if(name==null || name.trim().isEmpty())
         {
             throw new IllegalArgumentException("Doctor name search cannot be empty");
         }
@@ -120,6 +120,27 @@ public class DoctorManager {
             for(Doctor doctor:doctors)
             {
                 if(doctor.getName().toLowerCase().contains(name.toLowerCase()))
+                {
+                    results.add(doctor);
+                }
+            }
+            return results;
+        }
+    }
+
+
+    public ArrayList<Doctor> findDoctorBySpecialization(Doctor.Specialization specialization)
+    {
+        ArrayList<Doctor>results=new ArrayList<>();
+        if(specialization==null)
+        {
+            throw new IllegalArgumentException("Doctor specialization search cannot be empty");
+        }
+        else
+        {
+            for(Doctor doctor:doctors)
+            {
+                if(doctor.getSpecialization()==specialization)
                 {
                     results.add(doctor);
                 }
