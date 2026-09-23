@@ -91,4 +91,20 @@ public class AppointmentManager {
         }
         return false;
     }
+
+
+    public ArrayList<Appointment> findAppointmentByPatient(int patientId)
+    {
+        ArrayList<Appointment> results=new ArrayList<>();
+        if(patientId<=0)
+        {
+            throw new IllegalArgumentException("Patient Id is invalid");
+        }
+        for(Appointment appointment:appointments)
+        {
+            if(appointment.getPatient().getPatientId()==patientId)
+                results.add(appointment);
+        }
+        return results;
+    }
 }

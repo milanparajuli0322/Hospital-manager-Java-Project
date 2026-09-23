@@ -386,5 +386,13 @@ public class Main {
         {
             System.out.println("Appointment is not scheduled");
         }
+
+
+        // Appointments search by patient
+        ArrayList<Appointment> appointmentSearchByPatient=appointmentmanager.findAppointmentByPatient(12345);
+        for(Appointment appointments:appointmentSearchByPatient)
+        {
+            System.out.println(appointments.getAppointmentId()+"-"+appointments.getPatient().getName()+"-"+appointments.getDateTime());
+        }
     }
 }
