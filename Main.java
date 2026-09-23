@@ -1,4 +1,5 @@
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 public class Main {
@@ -332,8 +333,14 @@ public class Main {
         }
 
 
+        // Doctor availability status
         System.out.println(doctor.getStatus());
         doctor.setStatus(Doctor.Status.UNAVAILABLE);
         System.out.println(doctor.getStatus());
+
+
+        // Appointment booking
+        Appointment appointment=new Appointment(0001,patient,doctor,LocalDateTime.of(2026,9,23,10,30));
+        System.out.println(appointment.getAppointmentId());
     }
 }

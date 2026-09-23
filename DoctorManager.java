@@ -166,4 +166,3 @@ public class DoctorManager {
         return results;
     }
 }
-
