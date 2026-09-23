@@ -1,3 +1,4 @@
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 
@@ -62,7 +63,29 @@ public class AppointmentManager {
         {
             if(val.getAppointmentId()==appointment.getAppointmentId())
             {
-                appointments.remove(appointment);
+                appointment.setStatus(Appointment.Status.CANCELLED);
+                return true;
+            }
+        }
+        return false;
+    }
+
+
+    public boolean rescheduleAppointment(int appointmentId,LocalDateTime newdDateTime)
+    {
+        while(appointmentId<=0 || newdDateTime==null)
+        {
+            throw new IllegalArgumentException("Appointment Id or scheduled date is invalid");
+        }
+        for(Appointment appointment:appointments)
+        {
+            if(appointment.getAppointmentId()==appointmentId)
+            {
+                if(appointment.getStatus()==Appointment.Status.CANCELLED)
+                {
+                    return false;
+                }
+                appointment.setDateTime(newdDateTime);
                 return true;
             }
         }

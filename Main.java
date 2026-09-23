@@ -373,5 +373,18 @@ public class Main {
         {
             System.out.println("Appointment couldn't find");
         }
+
+
+        // Appointment rescheduling
+        boolean scheduleAppointment=appointmentmanager.rescheduleAppointment(1, LocalDateTime.of(2025,9,23,10,30));
+        if(scheduleAppointment==true)
+        {
+            System.out.println("Appointment reschedules to picked date");
+            System.out.println(appointment.getDateTime());
+        }
+        else
+        {
+            System.out.println("Appointment is not scheduled");
+        }
     }
 }
