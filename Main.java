@@ -361,5 +361,17 @@ public class Main {
             System.out.println(appointments.getPatient().getName());
             System.out.println(appointments.getDateTime());
         }
+
+
+        // Appointment removing from list
+        boolean removedAppointment=appointmentmanager.cancelAppointment(appointment);
+        if(removedAppointment==true)
+        {
+            System.out.println("Appointment cancelled");
+        }
+        else
+        {
+            System.out.println("Appointment couldn't find");
+        }
     }
 }

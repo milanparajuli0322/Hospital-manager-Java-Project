@@ -50,4 +50,22 @@ public class AppointmentManager {
         }
         return null;
     }
+
+
+    public boolean cancelAppointment(Appointment appointment)
+    {
+        if(appointment==null)
+        {
+            throw new IllegalArgumentException("Appointment cannot be empty");
+        }
+        for(Appointment val:appointments)
+        {
+            if(val.getAppointmentId()==appointment.getAppointmentId())
+            {
+                appointments.remove(appointment);
+                return true;
+            }
+        }
+        return false;
+    }
 }
