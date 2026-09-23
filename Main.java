@@ -347,8 +347,19 @@ public class Main {
         // Appointment listing
         AppointmentManager appointmentmanager=new AppointmentManager();
         System.out.println(appointmentmanager.getAllAppointments());
-        
+
+
+        // Appointment adding to list
         appointmentmanager.addAppointment(appointment);
         System.out.println(appointmentmanager.getAllAppointments().size());
+
+
+        // Appointment searching by appointment Id
+        ArrayList<Appointment> resultFindAppointmentByAppointmentId=appointmentmanager.findAppointmentById(1);
+        for(Appointment appointments:resultFindAppointmentByAppointmentId)
+        {
+            System.out.println(appointments.getPatient().getName());
+            System.out.println(appointments.getDateTime());
+        }
     }
 }

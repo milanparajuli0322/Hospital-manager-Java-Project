@@ -33,4 +33,21 @@ public class AppointmentManager {
             appointments.add(appointment);
         }
     }
+
+
+    public ArrayList<Appointment> findAppointmentById(int appointmentId)
+    {
+        if(appointmentId<=0)
+        {
+            throw new IllegalArgumentException("Appointment Id cannot be empty");
+        }
+        for(Appointment val:appointments)
+        {
+            if(val.getAppointmentId()==appointmentId)
+            {
+                return appointments;
+            }
+        }
+        return null;
+    }
 }
