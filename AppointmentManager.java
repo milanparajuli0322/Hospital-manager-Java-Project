@@ -14,4 +14,23 @@ public class AppointmentManager {
     {
         return new ArrayList<>(appointments);
     }
+
+    public void addAppointment(Appointment appointment)
+    {
+        if(appointment==null)
+        {
+            throw new IllegalArgumentException("Appointment cannot be empty");
+        }
+        else
+        {
+            for(Appointment val:appointments)
+            {
+                if(val.getAppointmentId()==appointment.getAppointmentId())
+                {
+                    throw new IllegalArgumentException("Appointment Id already taken");
+                }
+            }
+            appointments.add(appointment);
+        }
+    }
 }

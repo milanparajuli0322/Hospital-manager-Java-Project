@@ -340,12 +340,15 @@ public class Main {
 
 
         // Appointment booking
-        Appointment appointment=new Appointment(0001,patient,doctor,LocalDateTime.of(2026,9,23,10,30));
+        Appointment appointment=new Appointment(1,patient,doctor,LocalDateTime.of(2026,9,23,10,30));
         System.out.println(appointment.getAppointmentId());
 
 
         // Appointment listing
         AppointmentManager appointmentmanager=new AppointmentManager();
         System.out.println(appointmentmanager.getAllAppointments());
+        
+        appointmentmanager.addAppointment(appointment);
+        System.out.println(appointmentmanager.getAllAppointments().size());
     }
 }
