@@ -414,6 +414,8 @@ public class Main {
 
         // Medical record managing
         MedicalRecordManager medicalrecordmanager=new MedicalRecordManager();
+        MedicalRecord record=new MedicalRecord(1,patient,LocalDate.of(2026,9,23));
+        medicalrecordmanager.addMedicalRecord(record);
         System.out.println(medicalrecordmanager.getAllMedicalRecords().size());
     }
 }
