@@ -107,4 +107,22 @@ public class AppointmentManager {
         }
         return results;
     }
+
+
+    public ArrayList<Appointment> findAppointmentByDoctor(int doctorId)
+    {
+        ArrayList<Appointment>results=new ArrayList<>();
+        if(doctorId<=0)
+        {
+            throw new IllegalArgumentException("Invalid doctor Id");
+        }
+        for(Appointment appointment:appointments)
+        {
+            if(appointment.getDoctor().getDoctorId()==doctorId)
+            {
+                results.add(appointment);
+            }
+        }
+        return results;
+    }
 }
