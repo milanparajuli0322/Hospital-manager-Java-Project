@@ -410,5 +410,10 @@ public class Main {
         {
             System.out.println(appointments.getAppointmentId()+"-"+appointments.getDateTime().toLocalDate());
         }
+
+
+        // Medical record managing
+        MedicalRecordManager medicalrecordmanager=new MedicalRecordManager();
+        System.out.println(medicalrecordmanager.getAllMedicalRecords().size());
     }
 }
