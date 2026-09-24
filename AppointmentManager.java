@@ -1,3 +1,4 @@
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
@@ -119,6 +120,24 @@ public class AppointmentManager {
         for(Appointment appointment:appointments)
         {
             if(appointment.getDoctor().getDoctorId()==doctorId)
+            {
+                results.add(appointment);
+            }
+        }
+        return results;
+    }
+
+
+    public ArrayList<Appointment> filterAppointmentByDate(LocalDate newDate)
+    {
+        if(newDate==null)
+        {
+            throw new IllegalArgumentException("Date time filter cannot be empty");
+        }
+        ArrayList<Appointment> results=new ArrayList<>();
+        for(Appointment appointment:appointments)
+        {
+            if(appointment.getDateTime().toLocalDate().equals(newDate))
             {
                 results.add(appointment);
             }

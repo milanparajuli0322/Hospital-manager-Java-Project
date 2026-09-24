@@ -392,7 +392,7 @@ public class Main {
         ArrayList<Appointment> appointmentSearchByPatient=appointmentmanager.findAppointmentByPatient(12345);
         for(Appointment appointments:appointmentSearchByPatient)
         {
-            System.out.println(appointments.getAppointmentId()+"-"+appointments.getPatient().getName()+"-"+appointments.getDateTime());
+            System.out.println(appointments.getAppointmentId()+"-"+appointments.getPatient().getName()+"-"+appointments.getDateTime().toLocalDate());
         }
 
 
@@ -400,7 +400,15 @@ public class Main {
         ArrayList<Appointment> appointmentSearchByDoctor=appointmentmanager.findAppointmentByDoctor(1234);
         for(Appointment appointments:appointmentSearchByDoctor)
         {
-            System.out.println(appointments.getAppointmentId()+"-"+appointments.getDateTime());
+            System.out.println(appointments.getAppointmentId()+"-"+appointments.getDateTime().toLocalDate());
+        }
+
+
+        // Appointment filtering by date
+        ArrayList<Appointment> appointmentFilterByDate=appointmentmanager.filterAppointmentByDate(LocalDate.of(2026,9,23));
+        for(Appointment appointments:appointmentFilterByDate)
+        {
+            System.out.println(appointments.getAppointmentId()+"-"+appointments.getDateTime().toLocalDate());
         }
     }
 }
