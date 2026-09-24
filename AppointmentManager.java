@@ -31,6 +31,10 @@ public class AppointmentManager {
                 {
                     throw new IllegalArgumentException("Appointment Id already taken");
                 }
+                if(val.getDoctor().getDoctorId()==appointment.getDoctor().getDoctorId() && val.getDateTime().equals(appointment.getDateTime()) && val.getStatus()==Appointment.Status.SCHEDULED)
+                {
+                    throw new IllegalArgumentException("Appointment date already scheduled for this doctor");
+                }
             }
             appointments.add(appointment);
         }
